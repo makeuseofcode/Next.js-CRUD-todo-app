@@ -24,6 +24,7 @@ const TodoContextProvider = ({ children }) => {
       },
       ...tasks,
     ]);
+    setTask("");
   };
 
   const updateTask = (id, updateText) =>

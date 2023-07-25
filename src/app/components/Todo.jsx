@@ -7,28 +7,24 @@ const Todo = ({ task }) => {
   const [isEdit, setIsEdit] = useState(false);
 
   return (
-    <table className="todo-wrapper">
-      <tbody>
-        <tr>
-          {isEdit ? (
-            <input
-              type="text"
-              value={task.task}
-              onChange={(e) => updateTask(task.id, e.target.value)}
-            />
-          ) : (
-            <th className="task">{task.task}</th>
-          )}
+    <article className="todo-wrapper">
+      {isEdit ? (
+        <input
+          type="text"
+          value={task.task}
+          onChange={(e) => updateTask(task.id, e.target.value)}
+        />
+      ) : (
+        <h4 className="task">{task.task}</h4>
+      )}
 
-          <td className="actions">
-            <button className="edit" onClick={() => setIsEdit(!isEdit)}>
-              {isEdit ? "Save" : "Edit"}
-            </button>
-            <button onClick={() => deleteTask(task.id)}>Del</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <div className="actions">
+        <button className="edit" onClick={() => setIsEdit(!isEdit)}>
+          {isEdit ? "Save" : "Edit"}
+        </button>
+        <button onClick={() => deleteTask(task.id)}>Del</button>
+      </div>
+    </article>
   );
 };
 
