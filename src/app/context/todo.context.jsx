@@ -32,7 +32,6 @@ const TodoContextProvider = ({ children }) => {
 
   const deleteTask = (id) => setTasks(tasks.filter((t) => t.id !== id));
 
-  console.log(tasks);
   return (
     <TodoContext.Provider
       value={{
